@@ -220,11 +220,13 @@ d3.select(".reshuffle").on("click", () => {
 const keyword = (kw) => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
 
+
 const card_image = (paper, show) => {
   if (show)
     return ` <center><img class="lazy-load-img cards_img" data-src="${API.thumbnailPath(paper)}" width="80%"/></center>`;
   return "";
 };
+
 
 const card_detail = (paper, show) => {
   if (show)
@@ -305,7 +307,7 @@ const card_html = (paper) =>
                 <h6 class="card-subtitle text-muted" align="center">
                         ${paper.authors.join(", ")}
                 </h6>
-                ${card_image(paper, render_mode !== MODE.mini)}
+  <!--              ${card_image(paper, render_mode !== MODE.mini)}-->
                 
             </div>
                

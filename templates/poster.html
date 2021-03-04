@@ -74,12 +74,19 @@
     </div>
 </div>
 
+<video controls controlsList="nodownload" width=720> 
+   <source src="https://d375yyc7cmujcz.cloudfront.net/video/{{paper.UID}}.mp4"> 
+The browser does not support video tag. 
+</video>
+
+<!--
 <h5 style="color: red;">
     Add content for posters. This could be a video, embedded pdf, chat room ....
 </h5>
+-->
 
 <!-- Chat -->
-{{ components.section("Example Chat") }}
+<!--{{ components.section("Example Chat") }}
 
 <div class="col-md-12 col-xs-12 p-2">
     <div id="gitter" class="slp">
@@ -89,11 +96,11 @@
                     height="700px" width="100%"></iframe>
         </center>
     </div>
-</div>
+</div>-->
 
 <!-- Slides Live-->
 
-{{ components.section("Example SlidesLive") }}
+<!--{{ components.section("Example SlidesLive") }}
 
 <div class="col-md-12 col-xs-12 my-auto p-2">
     <div id="presentation-embed" class="slp my-auto"></div>
@@ -110,11 +117,11 @@
       });
     </script>
 </div>
-
+-->
 
 <!-- Chat -->
 
-{{ components.section("Example Poster") }}
+<!--{{ components.section("Example Poster") }}
 
 <div role="main" id="pdf_view"></div>
 
@@ -129,7 +136,6 @@
       " {{ paper.poster_pdf | default(config.default_poster_pdf) }}";
     initPDFViewer(pdfFile, "#pdf_view");
   });
-</script>
-
+</script> -->
 
 {% endblock %}

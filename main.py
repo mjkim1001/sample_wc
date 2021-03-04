@@ -24,7 +24,7 @@ def main(site_data_path):
         if typ == "json":
             site_data[name] = json.load(open(f))
         elif typ in {"csv", "tsv"}:
-            site_data[name] = list(csv.DictReader(open(f)))
+            site_data[name] = list(csv.DictReader(open(f,encoding = 'ISO-8859-1')))
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
 
@@ -71,7 +71,7 @@ def favicon():
 def home():
     data = _data()
     data["readme"] = open("README.md").read()
-    data["committee"] = site_data["committee"]["committee"]
+    #data["committee"] = site_data["committee"]["committee"]
     return render_template("index.html", **data)
 
 
@@ -94,17 +94,16 @@ def paper_vis():
     data = _data()
     return render_template("papers_vis.html", **data)
 
-
 @app.route("/calendar.html")
 def schedule():
-    data = _data()
-    data["day"] = {
-        "speakers": site_data["speakers"],
-        "highlighted": [
-            format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
-        ],
-    }
-    return render_template("schedule.html", **data)
+ data = _data()
+ data["day"] = {
+     "speakers": site_data["speakers"],
+     "highlighted": [
+         format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
+     ],
+ }
+ return render_template("schedule.html", **data)
 
 
 @app.route("/workshops.html")
@@ -142,7 +141,7 @@ def format_paper(v):
         "sessions": list_fields["sessions"],
         # links to external content per poster
         "pdf_url": v.get("pdf_url", ""),  # render poster from this PDF
-        "code_link": "https://github.com/Mini-Conf/Mini-Conf",  # link to code
+        "code_link": "http://wavelet.snu.ac.kr:5002/index.html",  # link to code
         "link": "https://arxiv.org/abs/2007.12238",  # link to paper
     }
 

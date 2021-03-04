@@ -1,5 +1,9 @@
 FAQ:
   - Section: Conference Advice
     QA:
-      - Question: What should I put on the paper pages?
-        Answer: "Depending on your conference, you might want to consider having embeded videos, chat rooms, or rendered posters. For ICLR, we used SlidesLive and Rocket.Chat. In another conference we used PDF.js to render posters."
+      - Question: Can I ask questions of the invited speakers live on Zoom?
+        Answer: "No, you should ask questions of the invited speakers only by using the chat channel. The session chair will choose and read out questions to the speaker."
+      - Question: If I watch the pre-recorded talks of tutorials, do I still need to attend the live session? What will be different there?
+        Answer: "Live sessions will include discussions with tutorial teachers and other attendes. Please visit individual tutorial website to know more."
+      - Question: Where can I find my paper's talk?
+        Answer: "Each paper has a page of its own. You can find your pre-recorded talk on your paper's page. You can search for your paper by its title/author in the Papers section to get to your paper's page."
